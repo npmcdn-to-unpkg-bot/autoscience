@@ -1,0 +1,19 @@
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+pid ROOT/nginx.pid;
+
+http {
+    access_log  ROOT/nginx_access.log;
+    error_log   ROOT/nginx_error.log info;
+    client_body_temp_path ROOT/client_body_temp;
+    fastcgi_temp_path ROOT/fastcgi_temp;
+    uwsgi_temp_path ROOT/uwsgi_temp;
+    proxy_temp_path ROOT/proxy_temp;
+    scgi_temp_path ROOT/scgi_temp;
+
+    include ROOT/nginx.server.conf;
+}
