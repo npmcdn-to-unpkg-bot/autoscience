@@ -1,9 +1,0 @@
-nltk
-numpy
-scipy
-pandas
-jupyter
-statsmodels
-scikit-learn
-ggplot
-seaborn
