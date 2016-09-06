@@ -1,0 +1,34 @@
+{
+  "bitwise": true,
+  "browser": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "latedef": true,
+  "noarg": true,
+  "node": true,
+  "undef": true,
+  "unused": true,
+  "strict": "global",
+  "globals": {
+    // Angular
+    "angular": false,
+
+    // Angular mocks
+    "module": false,
+    "inject": false,
+
+    // Jasmine
+    "jasmine": false,
+    "describe": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "it": false,
+    "expect": false,
+
+    // Protractor
+    "browser": false,
+    "element": false,
+    "by": false
+  }
+}

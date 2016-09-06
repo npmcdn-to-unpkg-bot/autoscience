@@ -1,0 +1,22 @@
+{
+  "name": "autoscience",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-cookies": "^1.5.0",
+    "angular-messages": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular-sanitize": "^1.5.0",
+    "angular-touch": "^1.5.0",
+    "bootstrap": "v4.0.0-alpha.3",
+    "octicons": "^4.3.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.0"
+  },
+  "appPath": "app",
+  "moduleName": "autoscienceApp"
+}
