@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>The Automated Data Scientist</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+  </head>
+  <body>
+    <script id='jupyter-config-data' type="application/json">{ "baseUrl": "http://localhost:8888" }</script>
+    <button class="execute_code" data-code="%matplotlib inline">magic</button>
+    <button class="execute_code" data-code="import matplotlib; import matplotlib.pyplot as plt; import seaborn as sns; sns.set()">Initialize</button>
+    <button class="execute_code" data-code="df = sns.load_dataset('iris')">Load Iris dataset</button>
+    <button class="execute_code" data-code="df = sns.load_dataset('anscombe')">Load Anscombe dataset</button>
+    <button class="execute_code" data-code="df = sns.load_dataset('tips')">Load Tips dataset</button>
+
+    <button class="execute_code" data-code="sns.pairplot(df);">Create scatterplot matrix</button>
+
+    <div id="output"></div>
+    <script type="text/javascript">
+    require.config({
+        paths: {
+          'jquery': 'https://code.jquery.com/jquery-2.2.4.min',
+          'jupyter-js-services': 'https://npmcdn.com/jupyter-js-services@^0.12/dist/index',
+        }
+    });
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
