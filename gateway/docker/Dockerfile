@@ -8,16 +8,18 @@ RUN apt-get update -qq && \
 
 USER jovyan
 
+# expose kernel gateway 
+EXPOSE 8888
+
 # add some extra packages
 ADD packages /srv/
 RUN pip install -r /srv/packages
 
 # install the kernel gateway
 RUN pip install jupyter_kernel_gateway
+ENV JUPYTER_GATEWAY=1
 	
 # REST API is designed as notebooks
 ADD ./notebooks /srv/notebooks
 
-# run kernel gateway on container start, not notebook server
-EXPOSE 8888
 
