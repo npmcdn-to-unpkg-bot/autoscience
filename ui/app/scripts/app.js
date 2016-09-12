@@ -33,7 +33,7 @@ app.config(function ($routeProvider) {
         controller: 'datasetCtrl',
         controllerAs: 'dataset'
       })
-      .when('/ds/1/variables/3', {
+      .when('/ds/:id/variables/:vid', {
         templateUrl: 'views/ds/variables/3.html',
         controller: 'variablesCtrl',
         controllerAs: 'variables'

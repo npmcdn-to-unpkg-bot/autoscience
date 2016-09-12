@@ -41,10 +41,10 @@
       <tr ng-repeat="v in ds.variables">
         <td><a href="#/ds/2/variables/{{v.alias}}">{{v.name}}</a></td>
         <td class="small">{{ v.sample.toString() }}</td>
-        <td>{{v.tcoerce}}</td>
-        <td>{{v.unique}}</td>
-        <td>{{v.nan}}</td>
-        <td>{{v.valid}}</td>
+        <td>{{v.type.tcoerce}}</td>
+        <td>{{v.type.unique}}</td>
+        <td>{{v.type.nan}}</td>
+        <td>{{v.type.valid}}</td>
       </tr>
     </table>
 </div>

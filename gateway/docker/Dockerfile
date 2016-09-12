@@ -20,6 +20,6 @@ RUN pip install jupyter_kernel_gateway
 ENV JUPYTER_GATEWAY=1
 	
 # REST API is designed as notebooks
-ADD ./notebooks /srv/notebooks
+ADD notebooks /srv/notebooks
 
 
