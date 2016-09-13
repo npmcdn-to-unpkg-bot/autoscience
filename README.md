@@ -1,5 +1,21 @@
 # The Automated Data Scientist
 
+## Installing
+
+Clone this project:
+
+```bash
+git clone git@github.com:TeradataBNL/autoscience.git
+cd autoscience
+```
+
+Build the container image:
+
+```bash
+$ make build
+```
+
+
 ## Getting started
 
 Start the proxy:
@@ -8,14 +24,13 @@ Start the proxy:
 $ make proxy/start
 ```
 
-Start the gateway:
+Start the API:
 
 ```bash
-$ make build           # Build container image
-$ make python_restapi  # Run Jupyter gateway
+$ make python_restapi
 ```
 
-Test the gateway:
+Test the API:
 
 ```bash
 $ curl -s localhost:8888/datasets/1 | jq . | head
