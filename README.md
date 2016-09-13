@@ -1,18 +1,37 @@
-# Jupyter JS Services Browser Example (ES5 / require edition)
+# The Automated Data Scientist
 
+## Getting started
 
-This example demonstrates using Jupyter JS Services from the browser using
-requirejs. The python script `main.py` is used to start a Jupyter Notebook Server
-and serve the sample application.
+Start the proxy
 
-The base url of the notebook server is to the HTML template as part of a JSON
-script tag.  The script starts a python notebook session and interacts
-with it, printing messages to the browser console.
+```bash
+$ proxy/start.sh
+```
 
-The example can be run with `python main.py`.
+Start the gateway
 
-Notes: 
+```bash
+$ cd gateway/docker
+$ make build           # Build container image
+$ make python_restapi  # Run Jupyter gateway
+```
 
-- The example is written in *JavaScript* using *ES5* syntax.
-- The example requires version 4.1+ of the Jupyter Notebook.
-- javascript libraries, such as requirejs, jquery, and jupyter-js-services are loaded from CDNs.
+Test the gateway
+
+```bash
+$ curl -s localhost:8888/datasets/1 | jq . | head
+{
+  "cols": 13,
+  "dims": 2,
+  "variables": {
+    "spdef": {
+      "sample": [
+        40,
+        50,
+        60,
+        130,
+```
+
+## License
+
+Apache License, version 2.0
