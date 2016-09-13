@@ -1,13 +1,18 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
-.PHONY: help build notebook gateway python_restapi
+.PHONY: help build notebook gateway python_restapi proxy/start proxy/stop
 
 IMAGE=autoscience/kernel_gateway
 
 help:
 	@echo 'Host commands:'
+	@echo ''
 	@echo 'build          - builds the container image'
+	@echo ''
+	@echo 'proxy/start    - starts the proxy'
+	@echo 'proxy/stop     - starts the proxy'
+	@echo ''
 	@echo 'gateway        - run jupyter gateway container of autoscience via websocket'
 	@echo 'python_restapi - run jupyter gateway container of autoscience via REST API (python implementation)'
 
@@ -49,3 +54,11 @@ python_restapi:
 	  --KernelGatewayApp.port=8888 \
 	  --KernelGatewayApp.api=notebook-http \
 	  --KernelGatewayApp.seed_uri=/srv/notebooks/autoscience.ipynb
+
+proxy/start:
+	@echo Starting proxy
+	@cd proxy && ./start.sh
+
+proxy/stop:
+	@echo Stopping proxy
+	@cd proxy && ./stop.sh

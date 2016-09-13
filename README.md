@@ -2,20 +2,20 @@
 
 ## Getting started
 
-Start the proxy
+Start the proxy:
 
 ```bash
-$ proxy/start.sh
+$ make proxy/start
 ```
 
-Start the gateway
+Start the gateway:
 
 ```bash
 $ make build           # Build container image
 $ make python_restapi  # Run Jupyter gateway
 ```
 
-Test the gateway
+Test the gateway:
 
 ```bash
 $ curl -s localhost:8888/datasets/1 | jq . | head
@@ -29,6 +29,13 @@ $ curl -s localhost:8888/datasets/1 | jq . | head
         50,
         60,
         130,
+```
+
+
+When you're done, stop the proxy:
+
+```bash
+$ make proxy/stop
 ```
 
 ## License
