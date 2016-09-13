@@ -11,7 +11,6 @@ $ proxy/start.sh
 Start the gateway
 
 ```bash
-$ cd gateway/docker
 $ make build           # Build container image
 $ make python_restapi  # Run Jupyter gateway
 ```
