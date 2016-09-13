@@ -1,11 +1,9 @@
 <div class="row m-t-1">
   <div class="col-md-7 offset-md-2">
-  <h3>Titanic</h3>
+  <h3>{{d.ds.name}}</h3>
   <p class="small">
-  filename: <a href="http://data.autoscience.io/1">titanic.csv.tgz</a><br/>
-  size:     61KB | encoding: ASCII English text, with CRLF line terminators <br/>
-  compression: gzip compressed data, from Unix - 61.4 % compression
-
+  filename: <a href="http://data.autoscience.io/{{d.ds.id}}">{{d.ds.file.name}}</a><br/>
+  filepath: {{d.ds.file.path}} | size: {{d.ds.file.size}} | encoding: {{d.ds.file.encoding.encoding}}, confidence: {{d.ds.file.encoding.confidence}}
   </p>
   </div>
   <div class="col-md-3">
@@ -20,8 +18,8 @@
 
 <div class="row">
   <div class="col-md-9 offset-md-2">
-  <p>{{ds.rows}} obs. of  {{ds.cols}} variables <br/>
-  <span class="small">NA rows:{{ds.na.rows}}, columns:{{ds.na.cols}}</span></p>
+  <p class="small">{{d.ds.rows}} obs. of  {{d.ds.cols}} variables <br/>
+    NA rows:{{d.ds.na.rows}}, columns:{{d.ds.na.cols}}</p>
   </div>
 </div>
 
@@ -30,7 +28,7 @@
     <table class="table table-sm">
       <thead>
         <tr>
-          <th>name</th>
+          <th>variable</th>
           <th >samples</th>
           <th >type</th>
           <th >unique</th>
@@ -38,8 +36,8 @@
           <th >valid</th>
         </tr>
       </thead>
-      <tr ng-repeat="v in ds.variables">
-        <td><a href="#/ds/2/variables/{{v.alias}}">{{v.name}}</a></td>
+      <tr ng-repeat="v in d.vars">
+        <td><a href="#/ds/{{d.ds.id}}/variables/{{v.id}}">{{v.name}}</a></td>
         <td class="small">{{ v.sample.toString() }}</td>
         <td>{{v.type.tcoerce}}</td>
         <td>{{v.type.unique}}</td>

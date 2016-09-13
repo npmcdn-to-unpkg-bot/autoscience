@@ -7,13 +7,19 @@
  * # MainCtrl
  * Controller of the autoscienceApp
  */
-app.controller('mainCtrl', function ($scope) {
+app.controller('mainCtrl', function ($scope, $http) {
 
-  $scope.datasets = [
-    { "id":1, "name":"titanic",	"desc":"Master of Life"},
-    { "id":2, "name":"pokemon",	"desc":"Got to catch 'em all"},
-    { "id":3, "name":"flight",	"desc":"Control Space and Time"},
-    { "id":4, "name":"network",	"desc":"Champ of Light Cycles"}
-  ]
+  $http({
+      method: 'GET',
+      url: '/cog/datasets'
+    }).then(function successCallback(response) {
+      // this callback will be called asynchronously
+      // when the response is available
+      $scope.datasets = response.data
+      console.log(response.data)
+    }, function errorCallback(response) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });
 
 });

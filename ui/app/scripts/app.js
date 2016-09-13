@@ -34,9 +34,9 @@ app.config(function ($routeProvider) {
         controllerAs: 'dataset'
       })
       .when('/ds/:id/variables/:vid', {
-        templateUrl: 'views/ds/variables/3.html',
-        controller: 'variablesCtrl',
-        controllerAs: 'variables'
+        templateUrl: 'views/ds/variables/overview.html',
+        controller: 'variableCtrl',
+        controllerAs: 'variable'
       })
       .otherwise({
         redirectTo: '/'

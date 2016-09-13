@@ -7,11 +7,12 @@
  * # AboutCtrl
  * Controller of the autoscienceApp
  */
-app.controller('datasetCtrl', function ($scope, $routeParams, $http) {
+app.controller('variableCtrl', function ($scope, $routeParams, $http) {
   var id= $routeParams.id;
+  var vid= $routeParams.vid;
   $http({
     method: 'GET',
-    url: '/cog/datasets/'+id+'/stats'
+    url: '/cog/datasets/'+id+'/variables/'+vid
   }).then(function successCallback(response) {
     // this callback will be called asynchronously
     // when the response is available
